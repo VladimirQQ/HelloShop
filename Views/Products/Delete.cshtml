@@ -1,0 +1,11 @@
+﻿@model MyShop1.Models.Product
+
+<h2>Подтвердите удаление товара</h2>
+
+<h3>Вы уверены, что хотите удалить товар "@Model.Name"?</h3>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>

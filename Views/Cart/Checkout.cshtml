@@ -1,0 +1,25 @@
+﻿@model MyShop1.Models.Order
+
+<h2>Оформление заказа</h2>
+
+<form method="post" asp-action="Checkout">
+    <h3>Ваши данные</h3>
+
+    <div class="form-group">
+        <label for="CustomerName">Имя:</label>
+        <input type="text" class="form-control" id="CustomerName" name="CustomerName" value="@Model.CustomerName" required />
+    </div>
+
+    <div class="form-group">
+        <label for="CustomerEmail">Email:</label>
+        <input type="email" class="form-control" id="CustomerEmail" name="CustomerEmail" value="@Model.CustomerEmail" required />
+    </div>
+
+    <div class="form-group">
+        <label for="ShippingAddress">Адрес доставки:</label>
+        <input type="text" class="form-control" id="ShippingAddress" name="ShippingAddress" value="@Model.ShippingAddress" required />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Подтвердить оформление</button>
+    </div>
+</form>

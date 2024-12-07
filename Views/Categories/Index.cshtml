@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Categories";
+}
+
+<h2>Categories</h2>
+
+<!-- Кнопка для добавления новой категории -->
+<a href="@Url.Action("Create", "Categories")" class="btn btn-primary">Добавить категорию</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.Name</td>
+                <td>
+                    <!-- Кнопка для удаления категории -->
+                    <a href="@Url.Action("Delete", "Categories", new { id = category.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
